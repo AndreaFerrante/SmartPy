@@ -1,1 +1,3 @@
+*This is a dummy project to test Python Web3 interaction with Ganache*
 
+At the same time, the Solidity Contracts present inside the contracts folder could be deployed on Infura...
