@@ -22,7 +22,8 @@ To build and then deploy on a public *blockchain* please follow these steps:
 2. open a Metamask account here https://metamask.io/
 3. open Metamask wallet and copy its address to "my_address" variable inside "smartpy.py" code
 4. sign up on Infura (https://infura.io) and create a new project
-5. given the new project in Infura, select "API Keys" and 
+5. given the new project in Infura, select "API Keys" and copy the mainnet https address (our endpoint)
+6. almost done, copy this API Key into the "HTTP Provider function"
 
 Overall, the most *important* things to remember are:
 
