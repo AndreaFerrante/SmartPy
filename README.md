@@ -26,5 +26,5 @@ To build and then deploy on a public *blockchain* please follow these steps:
 
 Overall, the most *important* things to remember are:
 
-**I)** "bytecode" is the machine information  our Solidity code gets “translated” into
+**I)** "bytecode" is the machine information  our Solidity code gets “translated” into <br>
 **II)** Application Binary Interface (i.e. ABI): it defines the methods and variables available in a smart contract that we can use to interact wit. "Since smart contracts are converted into bytecode before they get deployed to the blockchain, we need a way to know what operations and interactions we can initiate with them, and we need a standardized way to express those interfaces so that any programming language can be used to interact with smart contracts"
