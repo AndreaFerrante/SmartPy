@@ -9,7 +9,7 @@ Before proceding, make sure to have all the necessary packages in place:
 For more about the Solidity Programming Language check: https://docs.soliditylang.org
 
 '''
-
+import json
 # Import all needed packages ...
 import os
 from web3 import Web3
@@ -55,5 +55,26 @@ compiled_smart = compile_standard(
 
 write_compiled_file_to_json(file_to_save     = compiled_smart,
                             path_filename    = './build/compiled_smart')
+
+
+# Once the smart contract is compiled and saved as a JSON, we must read the ABI and the ByteCode.
+
+# --> get the ABI (first get the JSON, then the real ABI value in it)...
+application_binary_interface = json.loads( compiled_smart["contracts"]\
+                                                         ["helloworld.sol"]\
+                                                         ["HelloWorld"]\
+                                                         ["metadata"] )
+application_binary_interface = application_binary_interface["output"]["abi"]
+
+# --> get the byte code...
+bytecode                     = compiled_smart["contracts"]\
+                                             ["helloworld.sol"]\
+                                             ["HelloWorld"]\
+                                             ["evm"]\
+                                             ["bytecode"]\
+                                             ["object"]
+
+
+
 
 
