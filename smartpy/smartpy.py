@@ -16,6 +16,7 @@ import json
 import os
 from web3 import Web3
 from smartpy.utils import *
+from smartpy.config import *
 from eth_utils import address
 from dotenv import load_dotenv
 from solcx import compile_standard, install_solc
@@ -29,8 +30,8 @@ smart_contract_helloworld = read_file( './contracts/helloworld.sol' )
 ########################################################################################################################
 # After that the content is read, compile in Python the contract to obtain:
 #
-# 1. ABI:
-# 2. ByteCode:
+# 1. ABI: methods and variables available in a smart contract that we can use to interact with
+# 2. ByteCode: information in which our smart contract
 #
 # Important that the version of Solidity used is the same of the one used in the smart contract !
 
@@ -58,7 +59,7 @@ compiled_smart = compile_standard(
 )
 
 write_compiled_file_to_json(file_to_save     = compiled_smart,
-                            path_filename    = './build/compiled_smart')
+                            path_filename    = './build/simple_storage')
 
 
 ########################################################################################################################
