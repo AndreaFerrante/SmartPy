@@ -12,7 +12,6 @@ For more about the Solidity Programming Language check: https://docs.soliditylan
 
 # Import all needed packages ...
 import os
-import json
 from web3 import Web3
 from smartpy.utils import *
 from eth_utils import address
@@ -30,17 +29,17 @@ smart_contract_helloworld = read_file( './contracts/helloworld.sol' )
 # 2. ByteCode:
 #
 # Important that the version of Solidity used is the same of the one used in the smart contract !
-# In this case, this version
 
 
 sol_version = "0.8.13"
 install_solc(sol_version)
 
 compiled_smart = compile_standard(
+
     {
         "language": "Solidity",
         "sources":  {"helloworld.sol":   {"content": smart_contract_helloworld}},
-        "settings": { "outputSelection": {
+        "settings": {"outputSelection":  {
                                             "*": {
                                                   "*": ["abi",
                                                         "metadata",
@@ -51,6 +50,7 @@ compiled_smart = compile_standard(
                      },
     },
     solc_version="0.8.13"
+
 )
 
 write_compiled_file_to_json(file_to_save     = compiled_smart,
