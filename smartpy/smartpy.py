@@ -15,6 +15,8 @@ import json
 # Import all needed packages ...
 import os
 from web3 import Web3
+
+import smartpy.config
 from smartpy.utils import *
 from smartpy.config import *
 from eth_utils import address
@@ -84,10 +86,18 @@ byte_code                    = compiled_smart["contracts"]\
 ########################################################################################################################
 # Connect to ganache to see the smart contract in action locally...
 
-web_3       = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
-chain_id    = 1337
-my_address  = "0x665884dDa40F02013831f9Db3495E464c709f0C0"
-private_key = "0x9369be73e3fbe2541d59d53482efdf8bdf944dce53f67710ff66211c0455b444"
+# web_3       = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
+# chain_id    = 1337
+# my_address  = "0x665884dDa40F02013831f9Db3495E464c709f0C0"
+# private_key = private_key
+
+
+# Let's really connect to Infura
+web_3        = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/4a60cc0bbf5e4e05982ad438be7934fc'))
+chain_id     = 5
+my_address   = "0x665884dDa40F02013831f9Db3495E464c709f0C0"
+private_key  = private_key
+
 
 
 ########################################################################################################################
@@ -121,5 +131,9 @@ tx_call_fun_receipt = web_3.eth.wait_for_transaction_receipt(tx_call_fun_hash)
 # -------------------------------------------------
 print(storage_sol.functions.sayHelloWorld().call())
 # -------------------------------------------------
+
+
+
+
 
 
